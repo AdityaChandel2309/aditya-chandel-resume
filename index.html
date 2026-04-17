@@ -3,296 +3,596 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aditya Chandel Resume</title>
+<title>Aditya Chandel | Resume</title>
+<meta name="description" content="Aditya Chandel's portfolio-style resume covering education, projects, skills, and contact details.">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #f4efe7;
+    --paper: rgba(255, 251, 245, 0.86);
+    --panel: #123c36;
+    --panel-soft: #1d5a50;
+    --text: #1b1a18;
+    --muted: #5f5a52;
+    --line: rgba(18, 60, 54, 0.14);
+    --accent: #c86b3c;
+    --accent-soft: #f2d9cb;
+    --white: #fffdf9;
+    --shadow: 0 20px 60px rgba(28, 24, 18, 0.12);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
 
   body {
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    color: #2d2d2d;
-    background: #fff;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--text);
+    background:
+      radial-gradient(circle at top left, rgba(200, 107, 60, 0.18), transparent 28%),
+      radial-gradient(circle at top right, rgba(18, 60, 54, 0.16), transparent 24%),
+      linear-gradient(135deg, #efe5d8 0%, #f8f4ee 45%, #e9efe8 100%);
+    line-height: 1.6;
   }
 
-  .page {
-    width: 850px;
-    min-height: 1100px;
-    display: flex;
+  a {
+    color: inherit;
+  }
+
+  .shell {
+    max-width: 1180px;
     margin: 0 auto;
+    padding: 32px 20px 48px;
   }
 
-  /* ── LEFT SIDEBAR ── */
-  .sidebar {
-    width: 220px;
-    min-height: 100%;
-    background-color: #1a6b5a;
+  .hero {
     position: relative;
-    flex-shrink: 0;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.35fr 0.95fr;
+    gap: 28px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 32px;
+    background: linear-gradient(135deg, rgba(18, 60, 54, 0.96), rgba(23, 86, 77, 0.9));
+    color: var(--white);
+    box-shadow: var(--shadow);
   }
 
-  /* Diamond pattern overlay */
-  .sidebar::before {
-    content: '';
+  .hero::before,
+  .hero::after {
+    content: "";
     position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M20 2 L38 20 L20 38 L2 20 Z' fill='none' stroke='%23ffffff18' stroke-width='1'/%3E%3Cpath d='M20 8 L32 20 L20 32 L8 20 Z' fill='none' stroke='%23ffffff12' stroke-width='1'/%3E%3C/svg%3E");
-    background-repeat: repeat;
+    border-radius: 999px;
     pointer-events: none;
-    z-index: 0;
   }
 
-  .sidebar-content {
+  .hero::before {
+    width: 360px;
+    height: 360px;
+    top: -160px;
+    right: -80px;
+    background: radial-gradient(circle, rgba(242, 217, 203, 0.28), transparent 68%);
+  }
+
+  .hero::after {
+    width: 280px;
+    height: 280px;
+    bottom: -120px;
+    left: -40px;
+    background: radial-gradient(circle, rgba(200, 107, 60, 0.24), transparent 70%);
+  }
+
+  .hero-copy,
+  .hero-card {
     position: relative;
     z-index: 1;
-    padding: 18px 14px 24px 14px;
-    color: #d8ece7;
   }
 
-  .contact-item {
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 253, 249, 0.9);
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 18px 0 10px;
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-subtitle {
+    max-width: 44rem;
+    margin: 0;
+    font-size: 1.08rem;
+    color: rgba(255, 253, 249, 0.84);
+  }
+
+  .hero-actions {
     display: flex;
-    align-items: flex-start;
-    gap: 7px;
-    margin-bottom: 7px;
-    font-size: 10px;
-    color: #c8e4de;
-    line-height: 1.4;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
   }
 
-  .contact-item .icon {
-    font-size: 11px;
-    flex-shrink: 0;
-    margin-top: 1px;
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 18px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
   }
 
-  .sidebar-section {
-    margin-top: 18px;
+  .button:hover {
+    transform: translateY(-2px);
   }
 
-  .sidebar-heading {
-    font-size: 11px;
-    font-weight: bold;
-    color: #ffffff;
+  .button-primary {
+    background: var(--accent);
+    color: var(--white);
+  }
+
+  .button-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.18);
+    color: var(--white);
+  }
+
+  .hero-card {
+    align-self: end;
+    padding: 24px;
+    border-radius: 24px;
+    background: rgba(255, 251, 245, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+  }
+
+  .hero-card h2 {
+    margin: 0 0 12px;
+    font-size: 1rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-bottom: 2px solid rgba(255,255,255,0.35);
-    padding-bottom: 4px;
-    margin-bottom: 8px;
+    letter-spacing: 0.12em;
+    color: rgba(255, 253, 249, 0.7);
   }
 
-  .sidebar-text {
-    font-size: 9.5px;
-    color: #c8e4de;
-    line-height: 1.55;
+  .metric {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
   }
 
-  .skill-item {
-    font-size: 9.5px;
-    color: #c8e4de;
-    padding: 2px 0;
-    line-height: 1.4;
+  .metric-item {
+    padding: 14px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.08);
   }
 
-  .skill-item::before {
-    content: "• ";
-    color: #a8d4cc;
+  .metric-value {
+    display: block;
+    font-size: 1.35rem;
+    font-weight: 700;
   }
 
-  .sidebar a {
-    color: #a8d4cc;
-    font-size: 9px;
-    word-break: break-all;
-    line-height: 1.5;
+  .metric-label {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.88rem;
+    color: rgba(255, 253, 249, 0.74);
   }
 
-  /* ── RIGHT MAIN ── */
-  .main {
+  .grid {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .panel,
+  .content {
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+  }
+
+  .panel {
+    position: sticky;
+    top: 20px;
+    align-self: start;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--panel) 0%, var(--panel-soft) 100%);
+    color: var(--white);
+  }
+
+  .panel-inner {
+    padding: 28px 24px;
+  }
+
+  .panel-block + .panel-block {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .panel-label {
+    margin: 0 0 10px;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: rgba(255, 253, 249, 0.68);
+  }
+
+  .panel p {
+    margin: 0;
+    color: rgba(255, 253, 249, 0.86);
+  }
+
+  .contact-list,
+  .link-list,
+  .chip-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-item,
+  .link-list a {
+    text-decoration: none;
+    color: rgba(255, 253, 249, 0.92);
+  }
+
+  .contact-item strong {
+    display: block;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 253, 249, 0.62);
+  }
+
+  .chip-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .chip {
+    padding: 9px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 0.92rem;
+  }
+
+  .content {
+    padding: 28px;
+    background: var(--paper);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+  }
+
+  .section + .section {
+    margin-top: 28px;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    margin: 0;
+    font-size: 1.18rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .section-line {
     flex: 1;
-    padding: 18px 22px 24px 22px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(200, 107, 60, 0.5), rgba(18, 60, 54, 0.08));
   }
 
-  .name {
-    font-size: 36px;
-    font-weight: bold;
-    color: #1a6b5a;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-    line-height: 1.1;
+  .highlight {
+    padding: 20px 22px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(200, 107, 60, 0.12), rgba(200, 107, 60, 0.04));
+    border: 1px solid rgba(200, 107, 60, 0.14);
   }
 
-  .section {
-    margin-top: 14px;
+  .highlight strong {
+    display: block;
+    font-size: 1.15rem;
+    color: #7c3c19;
   }
 
-  .section-heading {
-    font-size: 11.5px;
-    font-weight: bold;
-    color: #1a6b5a;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    border-bottom: 1.5px solid #1a6b5a;
-    padding-bottom: 3px;
-    margin-bottom: 7px;
+  .timeline {
+    display: grid;
+    gap: 16px;
   }
 
-  .entry-title {
-    font-size: 10.5px;
-    font-weight: bold;
-    color: #2d2d2d;
-    margin-top: 6px;
-    margin-bottom: 2px;
+  .card {
+    padding: 20px 22px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--line);
   }
 
-  .entry-sub {
-    font-size: 10px;
-    color: #555;
-    margin-bottom: 2px;
-    line-height: 1.4;
+  .card h3 {
+    margin: 0;
+    font-size: 1.12rem;
   }
 
-  .bullet-list {
-    margin: 3px 0 4px 0;
+  .meta {
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 0.96rem;
   }
 
-  .bullet-item {
-    font-size: 10px;
-    color: #2d2d2d;
-    padding: 1.5px 0;
-    padding-left: 14px;
-    text-indent: -10px;
-    line-height: 1.45;
+  .meta strong {
+    color: var(--text);
   }
 
-  .bullet-item::before {
-    content: "• ";
-    color: #555;
-    font-size: 10px;
+  ul {
+    margin: 14px 0 0 18px;
+    padding: 0;
   }
 
-  .normal-text {
-    font-size: 10px;
-    color: #2d2d2d;
-    line-height: 1.5;
+  li + li {
+    margin-top: 8px;
   }
 
-  .bold-inline {
-    font-weight: bold;
+  .soft-skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+  }
+
+  .soft-skills .card {
+    padding: 16px 18px;
+  }
+
+  .footer-note {
+    margin-top: 26px;
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+
+  @media (max-width: 960px) {
+    .hero,
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .panel {
+      position: static;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .shell {
+      padding: 18px 14px 28px;
+    }
+
+    .hero,
+    .content,
+    .panel-inner {
+      padding: 22px 18px;
+    }
+
+    .metric {
+      grid-template-columns: 1fr;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
   }
 </style>
 </head>
 <body>
-<div class="page">
-
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-    <div class="sidebar-content">
-
-      <div class="contact-item">
-        <span class="icon">📍</span>
-        <span>Noida, India 201301</span>
+  <div class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Computer Science • Data Analysis • Business Technology</div>
+        <h1>Aditya Chandel</h1>
+        <p class="hero-subtitle">
+          Computer Science Engineering student building a profile at the intersection of analytics,
+          dashboarding, and business problem solving. Strong academic performance, practical project
+          work, and a clear focus on consulting-style technology solutions.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="mailto:adichand2005@gmail.com">Contact</a>
+          <a class="button button-secondary" href="https://linkedin.com/in/aditya-chandel-7035972a0/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
       </div>
-      <div class="contact-item">
-        <span class="icon">📱</span>
-        <span>+91-9205248599</span>
-      </div>
-      <div class="contact-item">
-        <span class="icon">✉</span>
-        <span>adichand2005@gmail.com</span>
-      </div>
+      <aside class="hero-card">
+        <h2>Snapshot</h2>
+        <div class="metric">
+          <div class="metric-item">
+            <span class="metric-value">AIR 3583</span>
+            <span class="metric-label">GATE 2026 (CS)</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value">Top 1.7%</span>
+            <span class="metric-label">Out of 211,020 candidates</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value">8.62 GPA</span>
+            <span class="metric-label">B.Tech CSE at KIIT</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value">8.0 GPA</span>
+            <span class="metric-label">IIT Madras Data Science Foundation</span>
+          </div>
+        </div>
+      </aside>
+    </section>
 
-      <div class="sidebar-section">
-        <div class="sidebar-heading">Summary</div>
-        <p class="sidebar-text">Computer science undergraduate with foundational training in data science from IIT Madras. Proficient in Python, SQL, Power BI, and Excel, with a strong focus on data analysis and business technology solutions. Demonstrates exceptional problem-solving, communication, and analytical skills, ready to contribute to consulting projects.</p>
-      </div>
+    <div class="grid">
+      <aside class="panel">
+        <div class="panel-inner">
+          <section class="panel-block">
+            <p class="panel-label">Contact</p>
+            <div class="contact-list">
+              <div class="contact-item">
+                <strong>Location</strong>
+                <span>Noida, India 201301</span>
+              </div>
+              <div class="contact-item">
+                <strong>Phone</strong>
+                <span>+91-9205248599</span>
+              </div>
+              <a class="contact-item" href="mailto:adichand2005@gmail.com">
+                <strong>Email</strong>
+                <span>adichand2005@gmail.com</span>
+              </a>
+            </div>
+          </section>
 
-      <div class="sidebar-section">
-        <div class="sidebar-heading">Skills</div>
-        <div class="skill-item">Data Analysis</div>
-        <div class="skill-item">Data Visualization</div>
-        <div class="skill-item">Business Analysis</div>
-        <div class="skill-item">Power BI</div>
-        <div class="skill-item">SQL</div>
-        <div class="skill-item">Python</div>
-        <div class="skill-item">Excel</div>
-        <div class="skill-item">Pandas</div>
-        <div class="skill-item">DBMS</div>
-        <div class="skill-item">Project Lifecycle Management</div>
-      </div>
+          <section class="panel-block">
+            <p class="panel-label">Core Skills</p>
+            <div class="chip-list">
+              <span class="chip">Data Analysis</span>
+              <span class="chip">Data Visualization</span>
+              <span class="chip">Business Analysis</span>
+              <span class="chip">Power BI</span>
+              <span class="chip">SQL</span>
+              <span class="chip">Python</span>
+              <span class="chip">Excel</span>
+              <span class="chip">Pandas</span>
+              <span class="chip">DBMS</span>
+              <span class="chip">Project Lifecycle Management</span>
+            </div>
+          </section>
 
-      <div class="sidebar-section">
-        <div class="sidebar-heading">Websites,<br>Portfolios, Profiles</div>
-        <a href="https://linkedin.com/in/aditya-chandel-7035972a0/">linkedin.com/in/aditya-chandel-7035972a0/</a>
-      </div>
+          <section class="panel-block">
+            <p class="panel-label">Profile</p>
+            <p>
+              Analytical student with growing depth in data, reporting, and implementation tracking.
+              Interested in consulting environments where business context and technical execution meet.
+            </p>
+          </section>
 
+          <section class="panel-block">
+            <p class="panel-label">Profiles</p>
+            <div class="link-list">
+              <a href="https://linkedin.com/in/aditya-chandel-7035972a0/" target="_blank" rel="noreferrer">linkedin.com/in/aditya-chandel-7035972a0/</a>
+            </div>
+          </section>
+        </div>
+      </aside>
+
+      <main class="content">
+        <section class="section">
+          <div class="section-head">
+            <h2 class="section-title">Accomplishment</h2>
+            <div class="section-line"></div>
+          </div>
+          <div class="highlight">
+            <strong>GATE 2026 (CS)</strong>
+            Secured AIR 3583 among 211,020 candidates nationwide, placing in the top 1.7%.
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <h2 class="section-title">Education</h2>
+            <div class="section-line"></div>
+          </div>
+          <div class="timeline">
+            <article class="card">
+              <h3>B.Tech in Computer Science Engineering</h3>
+              <p class="meta"><strong>KIIT, Bhubaneswar</strong> • Expected January 2027</p>
+              <ul>
+                <li>Current GPA: 8.62</li>
+                <li>Focused on building a strong technical base in computing and analytics.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Data Science Foundation Program</h3>
+              <p class="meta"><strong>IIT Madras</strong></p>
+              <ul>
+                <li>GPA: 8.0</li>
+                <li>Supplemented engineering coursework with structured data science study.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <h2 class="section-title">Project Experience</h2>
+            <div class="section-line"></div>
+          </div>
+          <div class="timeline">
+            <article class="card">
+              <h3>Invoice Payment Delay Prediction System</h3>
+              <ul>
+                <li>Developed a predictive system to identify whether customer invoices would be paid on time or delayed.</li>
+                <li>Analyzed payment history, invoice amount, and transaction patterns using Python and SQL.</li>
+                <li>Created a Power BI dashboard showing high-risk customers, expected delay periods, and payment trends.</li>
+                <li>Connected technical modeling work to a business-facing cash-flow risk use case.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Requirement-to-Implementation Tracking Dashboard</h3>
+              <ul>
+                <li>Designed a dashboard to track progress through requirement gathering, design, testing, deployment, and go-live.</li>
+                <li>Added KPIs for pending tasks, project risks, completion percentage, and testing status.</li>
+                <li>Simulated a consulting-style delivery workflow and highlighted bottlenecks early.</li>
+                <li>Showed understanding of implementation tracking and business process visibility.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Data Analysis Using Python</h3>
+              <ul>
+                <li>Cleaned and analyzed structured datasets to identify patterns and generate meaningful insights.</li>
+                <li>Performed exploratory data analysis and visualization to support data-driven decision making.</li>
+                <li>Automated repetitive analysis tasks and improved reporting efficiency.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <h2 class="section-title">Soft Skills</h2>
+            <div class="section-line"></div>
+          </div>
+          <div class="soft-skills">
+            <div class="card">Communication and presentation</div>
+            <div class="card">Problem solving and initiative</div>
+            <div class="card">Teamwork and collaboration</div>
+            <div class="card">Adaptability and leadership</div>
+            <div class="card">Time management</div>
+            <div class="card">Attention to detail</div>
+          </div>
+        </section>
+
+        <p class="footer-note">
+          Built as a web-first resume page for easy sharing and viewing across desktop and mobile.
+        </p>
+      </main>
     </div>
   </div>
-
-  <!-- MAIN CONTENT -->
-  <div class="main">
-
-    <div class="name">ADITYA CHANDEL</div>
-
-    <!-- ACCOMPLISHMENTS -->
-    <div class="section">
-      <div class="section-heading">Accomplishments</div>
-      <p class="normal-text">GATE 2026 (CS), Secured AIR 3583 among 211,020 candidates nationwide (Top 1.7%)</p>
-    </div>
-
-    <!-- EDUCATION -->
-    <div class="section">
-      <div class="section-heading">Education</div>
-      <p class="entry-sub">Expected in January 2027</p>
-      <p class="normal-text"><span class="bold-inline">B.Tech</span> | Computer Science Engineering</p>
-      <p class="entry-sub">KIIT, Bhubaneswar</p>
-      <div class="bullet-list">
-        <div class="bullet-item">Expected 2027</div>
-        <div class="bullet-item">GPA: 8.62</div>
-      </div>
-
-      <div class="entry-title">Data Science Foundation Program</div>
-      <p class="entry-sub">IIT Madras</p>
-      <p class="entry-sub">GPA: 8.0</p>
-    </div>
-
-    <!-- PROJECT EXPERIENCE -->
-    <div class="section">
-      <div class="section-heading">Project Experience</div>
-
-      <div class="entry-title">Invoice Payment Delay Prediction System</div>
-      <div class="bullet-list">
-        <div class="bullet-item">Developed a predictive system to identify whether customer invoices would be paid on time or delayed.</div>
-        <div class="bullet-item">Analyzed customer payment history, invoice amount, and transaction patterns using Python and SQL.</div>
-        <div class="bullet-item">Created a Power BI dashboard showing high-risk customers, expected delay period, and payment trends.</div>
-        <div class="bullet-item">Improved business understanding of cash-flow risks and demonstrated a finance-oriented use case relevant to consulting.</div>
-      </div>
-
-      <div class="entry-title">Requirement-to-Implementation Tracking Dashboard</div>
-      <div class="bullet-list">
-        <div class="bullet-item">Designed a dashboard to track project progress across stages such as Requirement Gathering, Design, Testing, Deployment, and Go-Live.</div>
-        <div class="bullet-item">Added KPIs for pending tasks, project risks, completion percentage, and testing status.</div>
-        <div class="bullet-item">Simulated a real consulting workflow and highlighted potential delays and bottlenecks.</div>
-        <div class="bullet-item">Demonstrated understanding of project implementation and business process tracking.</div>
-      </div>
-
-      <div class="entry-title">Data Analysis using Python</div>
-      <div class="bullet-list">
-        <div class="bullet-item">Cleaned and analyzed structured datasets to identify patterns and generate meaningful insights.</div>
-        <div class="bullet-item">Performed exploratory data analysis and visualization to support data-driven decision making.</div>
-        <div class="bullet-item">Automated repetitive analysis tasks and improved reporting efficiency.</div>
-      </div>
-    </div>
-
-    <!-- SOFT SKILLS -->
-    <div class="section">
-      <div class="section-heading">Soft Skills</div>
-      <div class="bullet-list">
-        <div class="bullet-item">Communication • Problem Solving • Teamwork • Collaboration</div>
-        <div class="bullet-item">Adaptability • Initiative • Leadership</div>
-        <div class="bullet-item">Time Management • Presentation Skills • Attention to Detail</div>
-      </div>
-    </div>
-
-  </div>
-</div>
 </body>
 </html>
