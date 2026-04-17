@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aditya Chandel Resume</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #2d2d2d;
+    background: #fff;
+  }
+
+  .page {
+    width: 850px;
+    min-height: 1100px;
+    display: flex;
+    margin: 0 auto;
+  }
+
+  /* ── LEFT SIDEBAR ── */
+  .sidebar {
+    width: 220px;
+    min-height: 100%;
+    background-color: #1a6b5a;
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  /* Diamond pattern overlay */
+  .sidebar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M20 2 L38 20 L20 38 L2 20 Z' fill='none' stroke='%23ffffff18' stroke-width='1'/%3E%3Cpath d='M20 8 L32 20 L20 32 L8 20 Z' fill='none' stroke='%23ffffff12' stroke-width='1'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .sidebar-content {
+    position: relative;
+    z-index: 1;
+    padding: 18px 14px 24px 14px;
+    color: #d8ece7;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin-bottom: 7px;
+    font-size: 10px;
+    color: #c8e4de;
+    line-height: 1.4;
+  }
+
+  .contact-item .icon {
+    font-size: 11px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .sidebar-section {
+    margin-top: 18px;
+  }
+
+  .sidebar-heading {
+    font-size: 11px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid rgba(255,255,255,0.35);
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+  }
+
+  .sidebar-text {
+    font-size: 9.5px;
+    color: #c8e4de;
+    line-height: 1.55;
+  }
+
+  .skill-item {
+    font-size: 9.5px;
+    color: #c8e4de;
+    padding: 2px 0;
+    line-height: 1.4;
+  }
+
+  .skill-item::before {
+    content: "• ";
+    color: #a8d4cc;
+  }
+
+  .sidebar a {
+    color: #a8d4cc;
+    font-size: 9px;
+    word-break: break-all;
+    line-height: 1.5;
+  }
+
+  /* ── RIGHT MAIN ── */
+  .main {
+    flex: 1;
+    padding: 18px 22px 24px 22px;
+  }
+
+  .name {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1a6b5a;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    line-height: 1.1;
+  }
+
+  .section {
+    margin-top: 14px;
+  }
+
+  .section-heading {
+    font-size: 11.5px;
+    font-weight: bold;
+    color: #1a6b5a;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    border-bottom: 1.5px solid #1a6b5a;
+    padding-bottom: 3px;
+    margin-bottom: 7px;
+  }
+
+  .entry-title {
+    font-size: 10.5px;
+    font-weight: bold;
+    color: #2d2d2d;
+    margin-top: 6px;
+    margin-bottom: 2px;
+  }
+
+  .entry-sub {
+    font-size: 10px;
+    color: #555;
+    margin-bottom: 2px;
+    line-height: 1.4;
+  }
+
+  .bullet-list {
+    margin: 3px 0 4px 0;
+  }
+
+  .bullet-item {
+    font-size: 10px;
+    color: #2d2d2d;
+    padding: 1.5px 0;
+    padding-left: 14px;
+    text-indent: -10px;
+    line-height: 1.45;
+  }
+
+  .bullet-item::before {
+    content: "• ";
+    color: #555;
+    font-size: 10px;
+  }
+
+  .normal-text {
+    font-size: 10px;
+    color: #2d2d2d;
+    line-height: 1.5;
+  }
+
+  .bold-inline {
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-content">
+
+      <div class="contact-item">
+        <span class="icon">📍</span>
+        <span>Noida, India 201301</span>
+      </div>
+      <div class="contact-item">
+        <span class="icon">📱</span>
+        <span>+91-9205248599</span>
+      </div>
+      <div class="contact-item">
+        <span class="icon">✉</span>
+        <span>adichand2005@gmail.com</span>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Summary</div>
+        <p class="sidebar-text">Computer science undergraduate with foundational training in data science from IIT Madras. Proficient in Python, SQL, Power BI, and Excel, with a strong focus on data analysis and business technology solutions. Demonstrates exceptional problem-solving, communication, and analytical skills, ready to contribute to consulting projects.</p>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Skills</div>
+        <div class="skill-item">Data Analysis</div>
+        <div class="skill-item">Data Visualization</div>
+        <div class="skill-item">Business Analysis</div>
+        <div class="skill-item">Power BI</div>
+        <div class="skill-item">SQL</div>
+        <div class="skill-item">Python</div>
+        <div class="skill-item">Excel</div>
+        <div class="skill-item">Pandas</div>
+        <div class="skill-item">DBMS</div>
+        <div class="skill-item">Project Lifecycle Management</div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Websites,<br>Portfolios, Profiles</div>
+        <a href="https://linkedin.com/in/aditya-chandel-7035972a0/">linkedin.com/in/aditya-chandel-7035972a0/</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+
+    <div class="name">ADITYA CHANDEL</div>
+
+    <!-- ACCOMPLISHMENTS -->
+    <div class="section">
+      <div class="section-heading">Accomplishments</div>
+      <p class="normal-text">GATE 2026 (CS), Secured AIR 3583 among 211,020 candidates nationwide (Top 1.7%)</p>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <div class="section-heading">Education</div>
+      <p class="entry-sub">Expected in January 2027</p>
+      <p class="normal-text"><span class="bold-inline">B.Tech</span> | Computer Science Engineering</p>
+      <p class="entry-sub">KIIT, Bhubaneswar</p>
+      <div class="bullet-list">
+        <div class="bullet-item">Expected 2027</div>
+        <div class="bullet-item">GPA: 8.62</div>
+      </div>
+
+      <div class="entry-title">Data Science Foundation Program</div>
+      <p class="entry-sub">IIT Madras</p>
+      <p class="entry-sub">GPA: 8.0</p>
+    </div>
+
+    <!-- PROJECT EXPERIENCE -->
+    <div class="section">
+      <div class="section-heading">Project Experience</div>
+
+      <div class="entry-title">Invoice Payment Delay Prediction System</div>
+      <div class="bullet-list">
+        <div class="bullet-item">Developed a predictive system to identify whether customer invoices would be paid on time or delayed.</div>
+        <div class="bullet-item">Analyzed customer payment history, invoice amount, and transaction patterns using Python and SQL.</div>
+        <div class="bullet-item">Created a Power BI dashboard showing high-risk customers, expected delay period, and payment trends.</div>
+        <div class="bullet-item">Improved business understanding of cash-flow risks and demonstrated a finance-oriented use case relevant to consulting.</div>
+      </div>
+
+      <div class="entry-title">Requirement-to-Implementation Tracking Dashboard</div>
+      <div class="bullet-list">
+        <div class="bullet-item">Designed a dashboard to track project progress across stages such as Requirement Gathering, Design, Testing, Deployment, and Go-Live.</div>
+        <div class="bullet-item">Added KPIs for pending tasks, project risks, completion percentage, and testing status.</div>
+        <div class="bullet-item">Simulated a real consulting workflow and highlighted potential delays and bottlenecks.</div>
+        <div class="bullet-item">Demonstrated understanding of project implementation and business process tracking.</div>
+      </div>
+
+      <div class="entry-title">Data Analysis using Python</div>
+      <div class="bullet-list">
+        <div class="bullet-item">Cleaned and analyzed structured datasets to identify patterns and generate meaningful insights.</div>
+        <div class="bullet-item">Performed exploratory data analysis and visualization to support data-driven decision making.</div>
+        <div class="bullet-item">Automated repetitive analysis tasks and improved reporting efficiency.</div>
+      </div>
+    </div>
+
+    <!-- SOFT SKILLS -->
+    <div class="section">
+      <div class="section-heading">Soft Skills</div>
+      <div class="bullet-list">
+        <div class="bullet-item">Communication • Problem Solving • Teamwork • Collaboration</div>
+        <div class="bullet-item">Adaptability • Initiative • Leadership</div>
+        <div class="bullet-item">Time Management • Presentation Skills • Attention to Detail</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
